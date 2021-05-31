@@ -83,7 +83,7 @@ class Segment {
         double Xa = (b2 - b1) / (A1 - A2);
         double Ya = A1 * Xa + b1;
 
-        if(delta > 0){
+        if((Xa < Math.max(start.getX(), another.start.getX())) && (Xa > Math.min(end.getX(), another.end.getX()))){
             return new Point(Xa, Ya);
         }
         else{
