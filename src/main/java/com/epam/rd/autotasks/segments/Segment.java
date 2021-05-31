@@ -83,10 +83,7 @@ class Segment {
         double Xa = (b2 - b1) / (A1 - A2);
         double Ya = A1 * Xa + b1;
 
-        if (A1 == A2) {
-            return null;
-        }
-        else if(delta > 0){
+        if(delta > 0){
             return new Point(Xa, Ya);
         }
         else{
