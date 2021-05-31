@@ -1,6 +1,6 @@
 package com.epam.rd.autotasks.segments;
 
-class Point {
+public class Point {
     private double x;
     private double y;
 
