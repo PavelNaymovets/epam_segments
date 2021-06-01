@@ -24,53 +24,53 @@ class Segment {
 
     Point intersection(Segment another) {
         //если оба отрезка вертикальные
-        if((start.getX() - end.getX() == 0) && (another.start.getX() - another.end.getX() == 0)) {
-            //если они лежат на одном X
-            if(start.getX() == another.start.getX()) {
-                return null;
-            }
-            return null;
-        }
-
-        //найдём коэффициенты уравнений, содержащих отрезки
-        //f1(x) = A1*x + b1 = y
-        //f2(x) = A2*x + b2 = y
-
-        //если первый отрезок вертикальный
-        if (start.getX() - end.getX() == 0) {
-
-            //найдём Xa, Ya - точки пересечения двух прямых
-            double Xa = start.getX();
-            double A2 = (another.start.getY() - another.end.getY()) / (another.start.getX() - another.end.getX());
-            double b2 = another.start.getY() - A2 * another.start.getX();
-            double Ya = A2 * Xa + b2;
-
-            if (another.start.getX() <= Xa && another.end.getX() >= Xa && Math.min(start.getY(), end.getY()) <= Ya &&
-                    Math.max(start.getY(), end.getY()) >= Ya) {
-
-                return new Point(Xa,Ya);
-            } else{
-                return null;
-            }
-        }
-
-        //если второй отрезок вертикальный
-        if (another.start.getX() - another.end.getX() == 0) {
-
-            //найдём Xa, Ya - точки пересечения двух прямых
-            double Xa = another.start.getX();
-            double A1 = (start.getY() - end.getY()) / (start.getX() - end.getX());
-            double b1 = start.getY() - A1 * start.getX();
-            double Ya = A1 * Xa + b1;
-
-            if (start.getX() <= Xa && end.getX() >= Xa && Math.min(another.start.getY(), another.end.getY()) <= Ya &&
-                    Math.max(another.start.getY(), another.end.getY()) >= Ya) {
-
-                return new Point(Xa,Ya);
-            }else{
-                return null;
-            }
-        }
+//        if((start.getX() - end.getX() == 0) && (another.start.getX() - another.end.getX() == 0)) {
+//            //если они лежат на одном X
+//            if(start.getX() == another.start.getX()) {
+//                return null;
+//            }
+//            return null;
+//        }
+//
+//        //найдём коэффициенты уравнений, содержащих отрезки
+//        //f1(x) = A1*x + b1 = y
+//        //f2(x) = A2*x + b2 = y
+//
+//        //если первый отрезок вертикальный
+//        if (start.getX() - end.getX() == 0) {
+//
+//            //найдём Xa, Ya - точки пересечения двух прямых
+//            double Xa = start.getX();
+//            double A2 = (another.start.getY() - another.end.getY()) / (another.start.getX() - another.end.getX());
+//            double b2 = another.start.getY() - A2 * another.start.getX();
+//            double Ya = A2 * Xa + b2;
+//
+//            if (another.start.getX() <= Xa && another.end.getX() >= Xa && Math.min(start.getY(), end.getY()) <= Ya &&
+//                    Math.max(start.getY(), end.getY()) >= Ya) {
+//
+//                return new Point(Xa,Ya);
+//            } else{
+//                return null;
+//            }
+//        }
+//
+//        //если второй отрезок вертикальный
+//        if (another.start.getX() - another.end.getX() == 0) {
+//
+//            //найдём Xa, Ya - точки пересечения двух прямых
+//            double Xa = another.start.getX();
+//            double A1 = (start.getY() - end.getY()) / (start.getX() - end.getX());
+//            double b1 = start.getY() - A1 * start.getX();
+//            double Ya = A1 * Xa + b1;
+//
+//            if (start.getX() <= Xa && end.getX() >= Xa && Math.min(another.start.getY(), another.end.getY()) <= Ya &&
+//                    Math.max(another.start.getY(), another.end.getY()) >= Ya) {
+//
+//                return new Point(Xa,Ya);
+//            }else{
+//                return null;
+//            }
+//        }
 
         //оба отрезка невертикальные
         double A1 = (start.getY() - end.getY()) / (start.getX() - end.getX());
